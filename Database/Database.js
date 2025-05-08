@@ -1,6 +1,7 @@
 
-/**
- * @description - Communicazione con il database MySQL.
+/** 
+ * Configurazione API:
+ * @description - Communicazione con il DataBase.
  */
 
 const mysql = require("mysql2");
