@@ -5,12 +5,14 @@
 
 const express = require("express");
 const routes = require("./Routes/Routes.js");
+const { Measure_routes } = require("./Middleware/Middleware_exp.js")
 
 const app = express();
 const port = 4000;
 
 app.use(express.json());
 app.use("/api", routes);
+app.use(Measure_routes);
 
 app.get("/", (req, res) => {
     return res.status(200).json({msg: "Benvenuto nell' API !!", code: 200});
