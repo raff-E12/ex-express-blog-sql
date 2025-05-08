@@ -15,7 +15,7 @@ const connection_database = mysql.createConnection({
 
 connection_database.connect((err) => {
     if (err) throw err;
-    console.log(">> Connessione MySQL pronta...")
+    console.log(">> Connessione MySQL pronta...");
 })
 
 module.exports = connection_database;
