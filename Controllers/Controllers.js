@@ -16,7 +16,7 @@ function Show_list(req, res){
 
 function Delete_Post(req, res) {
     // console.log(req.params.id);
-    let id = String(req.params.id).slice(1, 2);
+    let id = String(req.params.id);
     const keyword = "DELETE FROM posts WHERE id = ?";
      connection.query(keyword, [id], (error, results) => {
         if (error) return res.status(500).json({msg: "Errore nel Database", code: 500});
@@ -27,7 +27,7 @@ function Delete_Post(req, res) {
 }
 
 function Search_Post(req, res) {
-    let id = String(req.params.id).slice(1, 2);
+    let id = String(req.params.id);
     console.log(id);
     const keyword = "SELECT * FROM posts WHERE id = ?";
     const keyword_1 = "SELECT tb1.label FROM tags AS tb1 INNER JOIN post_tag AS tb2 ON tb1.id = tb2.tag_id WHERE tb2.tag_id = ?";
